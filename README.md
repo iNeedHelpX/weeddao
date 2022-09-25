@@ -6,7 +6,7 @@ to align the header title to the center
 
 <p align="center"><img alt="app icon" src="https://user-images.githubusercontent.com/41366455/192126801-1ac84c53-cd09-43b3-8885-66b560788a73.png" width="250"><br><sup><em>App icon</sup></em></p>
 
-<h1 align="center">$\textcolor{#FF0978}{\Huge\texttt{About this app}}$</h1>
+<h1 align="center">$\textcolor{#0AD336}{\Huge\texttt{About this app}}$</h1>
 
 * weeddao is just a temp name
 * This is a platform that can be used to find safe spaces for poc/woc to smoke up
