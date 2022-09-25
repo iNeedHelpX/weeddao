@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:weeddao/colors/bluepurple_gradient.dart';
 import 'package:weeddao/colors/colours_list.dart';
+import 'package:weeddao/colors/gradient.dart';
 
 AppBar myTopBar(BuildContext context) {
   return AppBar(
@@ -14,7 +15,7 @@ AppBar myTopBar(BuildContext context) {
       ),
       child: Container(
         decoration: BoxDecoration(
-          gradient: bluePurpleGrad(),
+          gradient: lightGrad(),
         ),
       ),
     ),
@@ -34,7 +35,7 @@ AppBar myTopBar(BuildContext context) {
           Text(
             "Weed Meet",
             style: GoogleFonts.damion(
-              color: lightgoldbg,
+              color: bg2,
               fontWeight: FontWeight.w800,
               fontSize: 65,
               shadows: [
