@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:weeddao/colors/colours_list.dart';
 
 LinearGradient greenPurpleGrad() {
   return const LinearGradient(colors: [
