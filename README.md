@@ -1,9 +1,10 @@
-<h1 align="center">"GetxShop" an app by Julia Pak</h1>
+<h1 align="center">"SafeSmoke" an app by Julia Pak</h1>
 <!--
 to align the header title to the center
 <h2 align="center">by: Julia Pak</h2>
 -->
-<p align="center"><img alt="app icon" src="https://user-images.githubusercontent.com/41366455/190889699-ad026341-0248-4212-ac50-9130e804e191.jpg" width="250"><br><sup><em>App icon</sup></em></p>
+
+<p align="center"><img alt="app icon" src="https://user-images.githubusercontent.com/41366455/192126801-1ac84c53-cd09-43b3-8885-66b560788a73.png" width="250"><br><sup><em>App icon</sup></em></p>
 
 <h1 align="center">$\textcolor{#FF0978}{\Huge\texttt{About this app}}$</h1>
 
