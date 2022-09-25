@@ -4,18 +4,18 @@ import 'package:weeddao/utils/arrow_clipper.dart';
 
 class SimpleAccountMenu extends StatefulWidget {
   final List<Icon> icons;
-  final BorderRadius? borderRadius;
+  final BorderRadius borderRadius;
   final Color backgroundColor;
   final Color iconColor;
   final ValueChanged<int> onChange;
 
   const SimpleAccountMenu({
-    Key? key,
-    required this.icons,
+    Key key,
+    this.icons,
     this.borderRadius,
-    this.backgroundColor = const Color(0xfff67c0b9),
+    this.backgroundColor = const Color(0xFFF67C0B9),
     this.iconColor = Colors.black,
-    required this.onChange,
+    this.onChange,
   })  : assert(icons != null),
         super(key: key);
   @override
@@ -24,19 +24,19 @@ class SimpleAccountMenu extends StatefulWidget {
 
 class _SimpleAccountMenuState extends State<SimpleAccountMenu>
     with SingleTickerProviderStateMixin {
-  GlobalKey? _key;
+  GlobalKey _key;
   bool isMenuOpen = false;
-  Offset? buttonPosition;
-  Size? buttonSize;
-  OverlayEntry? _overlayEntry;
-  BorderRadius? _borderRadius;
-  AnimationController? _animationController;
+  Offset buttonPosition;
+  Size buttonSize;
+  OverlayEntry _overlayEntry;
+  BorderRadius _borderRadius;
+  AnimationController _animationController;
 
   @override
   void initState() {
     _animationController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 250),
+      duration: Duration(milliseconds: 250),
     );
     _borderRadius = widget.borderRadius ?? BorderRadius.circular(4);
     _key = LabeledGlobalKey("button_icon");
@@ -45,28 +45,27 @@ class _SimpleAccountMenuState extends State<SimpleAccountMenu>
 
   @override
   void dispose() {
-    _animationController!.dispose();
+    _animationController.dispose();
     super.dispose();
   }
 
   findButton() {
-    RenderBox? renderBox =
-        _key!.currentContext?.findRenderObject() as RenderBox?;
-    buttonSize = renderBox!.size;
+    RenderBox renderBox = _key.currentContext.findRenderObject();
+    buttonSize = renderBox.size;
     buttonPosition = renderBox.localToGlobal(Offset.zero);
   }
 
   void closeMenu() {
-    _overlayEntry!.remove();
-    _animationController!.reverse();
+    _overlayEntry.remove();
+    _animationController.reverse();
     isMenuOpen = !isMenuOpen;
   }
 
   void openMenu() {
     findButton();
-    _animationController!.forward();
+    _animationController.forward();
     _overlayEntry = _overlayEntryBuilder();
-    Overlay.of(context)!.insert(_overlayEntry!);
+    Overlay.of(context).insert(_overlayEntry);
     isMenuOpen = !isMenuOpen;
   }
 
@@ -81,7 +80,7 @@ class _SimpleAccountMenuState extends State<SimpleAccountMenu>
       child: IconButton(
         icon: AnimatedIcon(
           icon: AnimatedIcons.menu_close,
-          progress: _animationController!,
+          progress: _animationController,
         ),
         color: Colors.white,
         onPressed: () {
@@ -99,9 +98,9 @@ class _SimpleAccountMenuState extends State<SimpleAccountMenu>
     return OverlayEntry(
       builder: (context) {
         return Positioned(
-          top: buttonPosition!.dy + buttonSize!.height,
-          left: buttonPosition!.dx,
-          width: buttonSize!.width,
+          top: buttonPosition.dy + buttonSize.height,
+          left: buttonPosition.dx,
+          width: buttonSize.width,
           child: Material(
             color: Colors.transparent,
             child: Stack(
@@ -113,14 +112,14 @@ class _SimpleAccountMenuState extends State<SimpleAccountMenu>
                     child: Container(
                       width: 17,
                       height: 17,
-                      color: textturq2,
+                      color: widget.backgroundColor ?? Color(0xFFF),
                     ),
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 15.0),
                   child: Container(
-                    height: widget.icons.length * buttonSize!.height,
+                    height: widget.icons.length * buttonSize.height,
                     decoration: BoxDecoration(
                       color: widget.backgroundColor,
                       borderRadius: _borderRadius,
@@ -140,8 +139,8 @@ class _SimpleAccountMenuState extends State<SimpleAccountMenu>
                               closeMenu();
                             },
                             child: Container(
-                              width: buttonSize!.width,
-                              height: buttonSize!.height,
+                              width: buttonSize.width,
+                              height: buttonSize.height,
                               child: widget.icons[index],
                             ),
                           );
