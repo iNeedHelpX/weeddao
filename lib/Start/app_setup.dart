@@ -1,6 +1,9 @@
+import 'package:flurry_navigation/flurry_menu.dart';
+import 'package:flurry_navigation/flurry_navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gradients_reborn/flutter_gradients_reborn.dart';
 import 'package:rolling_bottom_bar/rolling_bottom_bar.dart';
+import 'package:weeddao/Pages/home_pg.dart';
 import 'package:weeddao/Start/bar/bottom_icons.dart';
 import 'package:weeddao/Start/bar/top_appbar.dart';
 import 'package:weeddao/colors/colours_list.dart';
@@ -18,9 +21,7 @@ class _AppSetupState extends State<AppSetup> {
   PageView pageViews() {
     return PageView(
       controller: _controller,
-      children: const <Widget>[
-        //list pages here
-      ],
+      children: const <Widget>[],
     );
   }
 
