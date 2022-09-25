@@ -46,6 +46,8 @@ dependencies:
   flutter_gradients_reborn: ^1.0.0+7
   lottie: ^1.4.3
   rolling_bottom_bar: ^0.2.2
+  font_awesome_flutter: ^10.2.1
+  material_design_icons_flutter: ^5.0.6996
 
 dev_dependencies:
   flutter_test:
