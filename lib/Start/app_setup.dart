@@ -9,13 +9,13 @@ import 'package:weeddao/Start/bar/top_appbar.dart';
 import 'package:weeddao/colors/colours_list.dart';
 
 class AppSetup extends StatefulWidget {
-  AppSetup({Key? key}) : super(key: key);
+  const AppSetup({Key? key}) : super(key: key);
 
   @override
-  _AppSetupState createState() => _AppSetupState();
+  AppSetupState createState() => AppSetupState();
 }
 
-class _AppSetupState extends State<AppSetup> {
+class AppSetupState extends State<AppSetup> {
   final _controller = PageController();
   int selectedpage = 1;
   PageView pageViews() {
