@@ -21,7 +21,9 @@ class _AppSetupState extends State<AppSetup> {
   PageView pageViews() {
     return PageView(
       controller: _controller,
-      children: const <Widget>[],
+      children: const <Widget>[
+        HomePage(),
+      ],
     );
   }
 
