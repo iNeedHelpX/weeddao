@@ -26,7 +26,7 @@ to align the header title to the center
 
 You must have the flutter sdk installed if you are testing this from source.Flutter allows you to write code once and deploy to multiple devices, it is hardware Agnostic. More about flutter here: <https://flutter.dev/>
 
- $\textcolor{#FF0BB6}{\Large\textsf{I will sends you an apk file if needed}}$
+ $\textcolor{#FF0B60}{\Large\textsf{I will sends you an apk file if needed}}$
 
  This app runs firebase for datastorage and login. I've managed to map the user login to the shopping cart, which means cart items are personal to each user. Admittedly this was a very difficult task to figure out.
 
