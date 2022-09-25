@@ -4,39 +4,38 @@ import 'package:weeddao/utils/arrow_clipper.dart';
 
 class SimpleAccountMenu extends StatefulWidget {
   final List<Icon> icons;
-  final BorderRadius borderRadius;
-  final Color backgroundColor;
+  final BorderRadius? borderRadius;
+  final Color? backgroundColor;
   final Color iconColor;
   final ValueChanged<int> onChange;
 
   const SimpleAccountMenu({
-    Key key,
-    this.icons,
+    Key? key,
+    required this.icons,
     this.borderRadius,
-    this.backgroundColor = const Color(0xFFF67C0B9),
+    this.backgroundColor = const Color(0xfff67c0b9),
     this.iconColor = Colors.black,
-    this.onChange,
-  })  : assert(icons != null),
-        super(key: key);
+    required this.onChange,
+  }) : super(key: key);
   @override
-  _SimpleAccountMenuState createState() => _SimpleAccountMenuState();
+  SimpleAccountMenuState createState() => SimpleAccountMenuState();
 }
 
-class _SimpleAccountMenuState extends State<SimpleAccountMenu>
+class SimpleAccountMenuState extends State<SimpleAccountMenu>
     with SingleTickerProviderStateMixin {
-  GlobalKey _key;
+  GlobalKey? _key;
   bool isMenuOpen = false;
-  Offset buttonPosition;
-  Size buttonSize;
-  OverlayEntry _overlayEntry;
-  BorderRadius _borderRadius;
-  AnimationController _animationController;
+  late Offset buttonPosition;
+  late Size buttonSize;
+  late OverlayEntry _overlayEntry;
+  late BorderRadius _borderRadius;
+  late AnimationController _animationController;
 
   @override
   void initState() {
     _animationController = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 250),
+      duration: const Duration(milliseconds: 250),
     );
     _borderRadius = widget.borderRadius ?? BorderRadius.circular(4);
     _key = LabeledGlobalKey("button_icon");
@@ -50,8 +49,9 @@ class _SimpleAccountMenuState extends State<SimpleAccountMenu>
   }
 
   findButton() {
-    RenderBox renderBox = _key.currentContext.findRenderObject();
-    buttonSize = renderBox.size;
+    RenderBox? renderBox =
+        _key?.currentContext?.findRenderObject() as RenderBox?;
+    buttonSize = renderBox!.size;
     buttonPosition = renderBox.localToGlobal(Offset.zero);
   }
 
@@ -65,7 +65,7 @@ class _SimpleAccountMenuState extends State<SimpleAccountMenu>
     findButton();
     _animationController.forward();
     _overlayEntry = _overlayEntryBuilder();
-    Overlay.of(context).insert(_overlayEntry);
+    Overlay.of(context)!.insert(_overlayEntry);
     isMenuOpen = !isMenuOpen;
   }
 
@@ -74,7 +74,7 @@ class _SimpleAccountMenuState extends State<SimpleAccountMenu>
     return Container(
       key: _key,
       decoration: BoxDecoration(
-        color: Color(0xFFF5C6373),
+        color: const Color(0xfff5c6373),
         borderRadius: _borderRadius,
       ),
       child: IconButton(
@@ -112,7 +112,7 @@ class _SimpleAccountMenuState extends State<SimpleAccountMenu>
                     child: Container(
                       width: 17,
                       height: 17,
-                      color: widget.backgroundColor ?? Color(0xFFF),
+                      color: widget.backgroundColor ?? Color(0x00000fff),
                     ),
                   ),
                 ),
