@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:weeddao/Models/user_model.dart';
 import 'package:weeddao/Pages/login_pg.dart';
 import 'package:weeddao/Start/app_setup.dart';
@@ -20,7 +20,7 @@ class AuthController extends GetxController {
   Rxn<UserModel> firestoreUser = Rxn<UserModel>();
   GoogleSignIn googleSignIn = GoogleSignIn();
   // Rx<UserModel> userModel = UserModel().obs;
-  String usersCollection = "users";
+  String usersCollection = "weedusers";
 
   @override
   void onClose() {
@@ -100,7 +100,7 @@ class AuthController extends GetxController {
               email: result.user!.email!,
               name: result.user!.displayName,
               photoURL: result.user!.photoURL,
-              cart: [],
+              // cart: [],
             );
             _addUserToFirestore(_newUser, result.user!);
           });
