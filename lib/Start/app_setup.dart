@@ -51,7 +51,7 @@ class AppSetupState extends State<AppSetup> {
         extendBody: true,
         bottomNavigationBar: RollingBottomBar(
           color: Colors.black,
-          itemColor: lightpur,
+          itemColor: textturq3,
           controller: _controller,
           useActiveColorByDefault: false,
           items: bottomBarItems,

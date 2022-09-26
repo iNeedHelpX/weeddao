@@ -10,9 +10,9 @@ List<RollingBottomBarItem> get bottomBarItems {
   return const [
     RollingBottomBarItem(IcoFontIcons.weed, label: 'Weed', activeColor: green1),
     RollingBottomBarItem(MdiIcons.accountEye,
-        label: 'Eye', activeColor: textturq3),
+        label: 'Eye', activeColor: tabicon),
     RollingBottomBarItem(MdiIcons.walletMembership,
-        label: 'Wallet', activeColor: Colors.black),
+        label: 'Wallet', activeColor: medgreen),
   ];
 }
 
