@@ -19,7 +19,7 @@ class AuthController extends GetxController {
 
   Rxn<UserModel> firestoreUser = Rxn<UserModel>();
   GoogleSignIn googleSignIn = GoogleSignIn();
-  // Rx<UserModel> userModel = UserModel().obs;
+  Rx<UserModel> userModel = UserModel().obs;
   String usersCollection = "weedusers";
 
   @override
