@@ -1,5 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:weeddao/Models/user_model.dart';
@@ -33,13 +33,17 @@ class LoginController extends GetxController {
 
   setInitialScreen(User? user) {
     if (user == null) {
-      print("going to login page...");
-      Get.offAll(() => LoginPage());
+      if (kDebugMode) {
+        print("going to login page...");
+      }
+      Get.offAll(() => const LoginPage());
     }
     if (user != null) {
-      print("The user is ${user.displayName}");
+      if (kDebugMode) {
+        print("The user is ${user.displayName}");
+      }
       userModel.bindStream(listenToUser());
-      Get.offAll(() => AppSetup());
+      Get.offAll(() => const AppSetup());
     }
   }
 
@@ -56,16 +60,20 @@ class LoginController extends GetxController {
     );
     try {
       await auth.signInWithCredential(cred).then((res) async {
-        print('Signed in successfully as ' + res.user!.displayName.toString());
-        print('email: ' + res.user!.email.toString());
-        UserModel _newUser = UserModel(
+        if (kDebugMode) {
+          print('Signed in successfully as ${res.user!.displayName}');
+          print('email: ${res.user!.email}');
+          print('email: ${res.user!.email}');
+        }
+
+        UserModel newUser = UserModel(
           id: res.user!.uid,
           email: res.user!.email!,
           name: res.user!.displayName,
           photoURL: res.user!.photoURL,
           cart: [],
         );
-        _addUserToFB(_newUser, res.user!);
+        _addUserToFB(newUser, res.user!);
       });
     } catch (e) {
       debugPrint(e.toString());
@@ -84,7 +92,7 @@ class LoginController extends GetxController {
     logger.i("UPDATED");
     firebaseFirestore
         .collection(usersCollection)
-        .doc(fbUser.value?.uid)
+        .doc(fbUser.value!.uid)
         .update(data);
   }
 
@@ -95,8 +103,8 @@ class LoginController extends GetxController {
       .map((snapshot) => UserModel.fromSnapshot(snapshot));
 
   _addUserToFB(UserModel usr, User firebaseUser) {
-    firebaseFirestore.collection(usersCollection).doc(usr.id).set({
-      "displayName": firebaseUser.displayName,
+    firebaseFirestore.collection(usersCollection).doc().set({
+      "displayName": usr.name,
       "id": usr.id,
       "photoURL": usr.photoURL,
       "email": usr.email,
