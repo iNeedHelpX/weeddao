@@ -4,7 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:logger/logger.dart';
-import 'package:weeddao/Controllers/auth_controller.dart';
+import 'package:weeddao/Controllers/login_controller.dart';
 import 'package:weeddao/Controllers/weedproducts_controller.dart';
 
 // for firebase
@@ -13,7 +13,7 @@ FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
 FirebaseAuth auth = FirebaseAuth.instance;
 
 //controllers
-AuthController authController = AuthController.instance;
+LoginController loginController = LoginController.instance;
 WeedController weedController = WeedController.instance;
 
 //other variables

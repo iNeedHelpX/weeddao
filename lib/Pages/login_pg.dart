@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gradients_reborn/flutter_gradients_reborn.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
-import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:weeddao/colors/colours_list.dart';
+import 'package:weeddao/globalvars.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
 
-  // final AuthController authController = Get.find();
-  // final LoginController logController = Get.find();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,14 +45,12 @@ class LoginPage extends StatelessWidget {
                         ),
                         SignInButton(
                           elevation: 4,
-                          text: "Sign in with your gmail account",
+                          text: "Sign in with Google",
                           padding: const EdgeInsets.all(5),
                           Buttons.GoogleDark,
                           onPressed: () {
                             //sign in logic goes here
-
-                            // logController.googleLogin();
-                            // authController.googleLogin(context);
+                            loginController.googleLogin();
                           },
                         )
                       ],

@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:weeddao/Models/cart_model.dart';
 
 class UserModel {
   static const ID = "id";
@@ -12,14 +13,14 @@ class UserModel {
   String? name;
   String? email;
   String? photoURL;
-  // List<CartItemModel>? cart;
+  List<CartItemModel>? cart;
 
   UserModel({
     this.id,
     this.photoURL,
     this.email,
     this.name,
-    // this.cart,
+    this.cart,
   });
 
   UserModel.fromSnapshot(DocumentSnapshot<Map<String, dynamic>> snapshot) {
@@ -47,6 +48,6 @@ class UserModel {
         "email": email,
         "name": name,
         "photoUrl": photoURL,
-        // "cart": cart
+        "cart": cart
       };
 }
