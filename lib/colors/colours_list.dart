@@ -39,3 +39,5 @@ const medpink = Color.fromARGB(255, 251, 109, 230);
 const lightpur = Color.fromARGB(255, 216, 199, 255);
 const lightp = Color.fromARGB(255, 246, 170, 243);
 const lightgreen = Color.fromARGB(255, 194, 251, 197);
+const medgreen = Color.fromARGB(255, 116, 204, 60);
+const green1 = Color.fromARGB(255, 63, 196, 56);

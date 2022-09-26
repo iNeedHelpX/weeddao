@@ -3,6 +3,7 @@ import 'package:flurry_navigation/flurry_navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gradients_reborn/flutter_gradients_reborn.dart';
 import 'package:rolling_bottom_bar/rolling_bottom_bar.dart';
+import 'package:weeddao/Pages/account_pg.dart';
 import 'package:weeddao/Pages/home_pg.dart';
 import 'package:weeddao/Start/bar/bottom_icons.dart';
 import 'package:weeddao/Start/bar/top_appbar.dart';
@@ -23,6 +24,7 @@ class AppSetupState extends State<AppSetup> {
       controller: _controller,
       children: const <Widget>[
         HomePage(),
+        AccountPage(),
       ],
     );
   }
@@ -48,8 +50,8 @@ class AppSetupState extends State<AppSetup> {
         body: pageViews(),
         extendBody: true,
         bottomNavigationBar: RollingBottomBar(
-          color: barback1,
-          itemColor: textturq2,
+          color: Colors.black,
+          itemColor: lightpur,
           controller: _controller,
           useActiveColorByDefault: false,
           items: bottomBarItems,
