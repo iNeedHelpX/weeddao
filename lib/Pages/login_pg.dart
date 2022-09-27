@@ -46,7 +46,7 @@ class LoginPage extends StatelessWidget {
                         SignInButton(
                           elevation: 4,
                           text: "Sign in with Google",
-                          padding: const EdgeInsets.all(5),
+                          padding: const EdgeInsets.all(1),
                           Buttons.GoogleDark,
                           onPressed: () {
                             //sign in logic goes here
