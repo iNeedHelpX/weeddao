@@ -9,10 +9,10 @@ import 'package:weeddao/icons/resized_sci.dart';
 List<RollingBottomBarItem> get bottomBarItems {
   return const [
     RollingBottomBarItem(IcoFontIcons.weed, label: 'Weed', activeColor: green1),
-    RollingBottomBarItem(MdiIcons.accountEye,
-        label: 'Eye', activeColor: tabicon),
+    RollingBottomBarItem(MdiIcons.mapClock,
+        label: 'Map', activeColor: medpurple),
     RollingBottomBarItem(MdiIcons.walletMembership,
-        label: 'Wallet', activeColor: medgreen),
+        label: 'Account', activeColor: medgreen),
   ];
 }
 

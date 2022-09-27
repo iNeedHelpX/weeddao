@@ -33,7 +33,7 @@ AppBar curvedTopBar() {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Weed",
+                  "Blaze Up!",
                   style: GoogleFonts.nothingYouCouldDo(
                       color: textturq2,
                       fontSize: 45,
