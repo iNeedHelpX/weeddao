@@ -6,7 +6,6 @@ class UserModel {
   static const NAME = "name";
   static const EMAIL = "email";
   static const CART = "cart";
-
   static const PHOTOURL = "photoURL";
 
   String? id;
@@ -28,20 +27,20 @@ class UserModel {
     email = snapshot.data()!['EMAIL'] ?? '';
     photoURL = snapshot.data()!['PHOTOURL'] ?? '';
     id = snapshot.data()!['ID'] ?? '';
-    // cart = _convertCartItems(snapshot.data()!['CART'] ?? []);
+    cart = _convertCartItems(snapshot.data()!['CART'] ?? []);
   }
 
-  // List<CartItemModel> _convertCartItems(List cartFomDb) {
-  //   List<CartItemModel> _result = [];
-  //   if (cartFomDb.length > 0) {
-  //     cartFomDb.forEach((element) {
-  //       _result.add(CartItemModel.fromMap(element));
-  //     });
-  //   }
-  //   return _result;
-  // }
+  List<CartItemModel> _convertCartItems(List cartFomDb) {
+    List<CartItemModel> result = [];
+    if (cartFomDb.isNotEmpty) {
+      for (var element in cartFomDb) {
+        result.add(CartItemModel.fromMap(element));
+      }
+    }
+    return result;
+  }
 
-  // List cartItemsToJson() => cart!.map((item) => item.toJson()).toList();
+  List cartItemsToJson() => cart!.map((item) => item.toJson()).toList();
 
   Map<String, dynamic> toJson() => {
         "uid": id,
