@@ -33,11 +33,11 @@ AppBar myTopBar(BuildContext context) {
       child: Stack(
         children: [
           Text(
-            "Weed Meet",
+            "Weed",
             style: GoogleFonts.damion(
               color: bg2,
               fontWeight: FontWeight.w800,
-              fontSize: 65,
+              fontSize: 80,
               shadows: [
                 Shadow(
                   offset: const Offset(8, 8.0),
