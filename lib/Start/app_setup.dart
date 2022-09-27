@@ -5,6 +5,7 @@ import 'package:flutter_gradients_reborn/flutter_gradients_reborn.dart';
 import 'package:rolling_bottom_bar/rolling_bottom_bar.dart';
 import 'package:weeddao/Pages/account_pg.dart';
 import 'package:weeddao/Pages/home_pg.dart';
+import 'package:weeddao/Pages/map_pg.dart';
 import 'package:weeddao/Start/bar/bottom_icons.dart';
 import 'package:weeddao/Start/bar/top_appbar.dart';
 import 'package:weeddao/colors/colours_list.dart';
@@ -24,6 +25,7 @@ class AppSetupState extends State<AppSetup> {
       controller: _controller,
       children: const <Widget>[
         HomePage(),
+        MapsPage(),
         AccountPage(),
       ],
     );
